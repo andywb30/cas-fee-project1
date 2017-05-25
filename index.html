@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="style/stylereset.css">
+    <link rel="stylesheet" href="style/stylegeneric.css">
+    <link rel="stylesheet" href="style/styleindex.css">
+    <link id="styleskin" rel="stylesheet" href="style/skinblue.css">
+
+
+</head>
+<body>
+
+
+
+<header class="header">
+
+    <div class="notestitle">
+        <h1>Notes</h1>
+    </div>
+
+    <div class="headerbars">
+        <div class="top-bar">
+            <a href="detail.html" class="skin-active top-bar-href">Create new Note</a>
+        </div>
+
+        <div class="style-choice">
+            <form>
+                <select class="skin-active-input choice-select" id="choice-select" onclick="changeStyleSkin()">
+                    <option value="1">Blue</option>
+                    <option value="2">Black-White</option>
+
+                </select>
+            </form>
+        </div>
+    </div>
+</header>
+
+
+<main>
+
+    <div class="control-bar">
+        <div>
+            <div class="sort-item">
+                <input type="radio" class="sort-item-radio" id="i1" name="sort" value="finish-date">
+                <label class="skin-active sort-item-radio-label" for="i1">by finish date</label>
+            </div>
+            <div class="sort-item">
+                <input type="radio"  class="sort-item-radio" id="i2" name="sort" value="created-date">
+                <label class="skin-active sort-item-radio-label" for="i2">by created date</label>
+            </div>
+            <div class="sort-item" >
+                <input type="radio"  class="sort-item-radio" id="i3" name="sort" value="importance">
+                <label class="skin-active sort-item-radio-label" for="i3">by importance</label>
+            </div>
+        </div>
+
+        <div class="control-bar-finishswitch">
+            <input type="checkbox" class="finishswitch-checkbox" id="c1">
+            <label class="skin-active finishswitch-label" for="c1">Show Finished</label>
+
+        </div>
+    </div>
+
+    <div class="list-notes" id="list-notes">
+        <div class="item-note">
+            <div class="item-header">
+                <div class="header-date">
+                    <p>Nächsten Mittwoch</p>
+                </div>
+                <div class="header-title">
+                    <p>CAS-FEE Project 1</p>
+                </div>
+                <div class="header-importance">
+                    <p>flash</p>
+                </div>
+
+            </div>
+            <div class="item-body">
+                <div class="body-checkbox">
+                    <input type="checkbox" class="checkbox-input" id="c10" name="done" value="Finished">
+                    <div class="checkbox-background"></div>
+                    <label class="checkbox-label" for="c10"><span>Finished</span></label>
+
+                </div>
+
+                <div class="skin-inactive body-text">
+                    <p>test test test <br> adölfj alödkfj </p>
+                </div>
+
+                <div class="body-edit">
+                    <a href="detail.html" class="skin-active">Edit</a>
+
+                </div>
+            </div>
+
+
+            <div class="item">
+                <div class="item-header">
+                    <div class="header-date">
+                        <p>heute</p>
+                    </div>
+                    <div class="header-title">
+                        <p>CAS-FEE KKKK</p>
+                    </div>
+                    <div class="header-importance">
+                        <p>flash flash</p>
+                    </div>
+
+                </div>
+                <div class="item-body">
+                    <div class="body-checkbox">
+                        <input type="checkbox" class="checkbox-input" id="c11" name="done" value="Finished">
+                        <div class="checkbox-background"></div>
+                        <label class="checkbox-label" for="c11"><span>Finished</span></label>
+                    </div>
+
+                    <div class="skin-inactive body-text">
+                        <p>test tekhjkjhst test <br> adölfj ast <br> adölfj ast <br> adölfj alödkfj </p>
+                    </div>
+
+                    <div class="body-edit">
+                            <a href="detail.html" class="skin-active">Edit</a>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</main>
+
+
+<script src="js/jquery.min.js"></script>
+<script>
+    function changeStyleSkin(){
+        var x = document.getElementById("choice-select");
+        var i = x.selectedIndex;
+        console.log("selectedIx:"+i);
+        switch(i) {
+            case 0:
+                document.getElementById("styleskin").setAttribute("href","style/skinblue.css");
+                break;
+            case 1:
+                document.getElementById("styleskin").setAttribute("href","style/skinyellow.css");
+                break;
+            default:
+                break;
+        }
+
+    }
+
+</script>
+
+
+
+</body>
+</html>

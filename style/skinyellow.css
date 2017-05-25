@@ -1,0 +1,78 @@
+
+
+body {
+    font-family:sans-serif, Arial;
+}
+
+p, span{
+    color: darkslategrey;
+}
+
+.skin-active-input{
+    color: darkslategrey;
+    background: antiquewhite;
+    border: none;
+}
+.skin-active{
+
+    color: antiquewhite;
+    background: dimgrey;
+    text-decoration: none;
+    padding: 0.3em;
+    border: none;
+    cursor:pointer;
+}
+
+.skin-inactive{
+    background-color: antiquewhite;
+    padding: 0.2em;
+}
+
+/*special paddings, margins*/
+.description-textarea,
+.body-text{
+
+    padding: 0 0.1em 0 0.1em;
+    margin: 0.1em 0.3em 0.1em 0;
+
+
+}
+.description-textarea{
+    border-color: lightblue;
+    font-family: inherit;
+}
+
+
+.notestitle h1{
+    background-color: antiquewhite;
+}
+
+/*checked and label*/
+.sort-item-radio:checked + .sort-item-radio-label,
+.finishswitch-checkbox:checked + .finishswitch-label
+{
+    background-color:dimgrey;
+    color: antiquewhite;
+}
+
+.sort-item {
+    padding-right: 0.2em;
+}
+
+/*proper alignment to div*/
+.body-edit{
+    margin-top: 0.438em;
+}
+
+/*draw line after each item*/
+.item-header {
+    border-top: solid dimgrey 0.01em;
+
+}
+
+/*create background*/
+.checkbox-background{
+
+    background: antiquewhite;
+
+}

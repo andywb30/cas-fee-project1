@@ -1,0 +1,17 @@
+
+/*set initial settings */
+p, a, h1,h2,h3,h4,h5, input, button, textarea {
+    padding: 1em;
+    font-size: 1em;
+}
+/*body*/
+
+body{
+    margin-left: 1em;
+    margin-right: 1em;
+    margin-top: 2em;
+}
+
+.notestitle h1{
+    margin-bottom:1.5em;
+}

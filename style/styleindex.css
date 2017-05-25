@@ -1,0 +1,176 @@
+
+
+/*header section*/
+
+
+.headerbars {
+    display: flex;
+    margin-top: 1em;
+    margin-bottom:2em;
+}
+
+.top-bar {
+    width: 50%;
+    text-align: left;
+}
+
+.style-choice{
+    width: 50%;
+    text-align: right;
+}
+
+
+.style-choice select{
+    padding: 0.2em;
+    border:none;
+}
+/*main section */
+
+.control-bar{
+    display: flex;
+}
+.control-sort{
+    margin-bottom: 1em;
+}
+
+.control-bar-finishswitch{
+    margin-left: 1em;
+}
+.finishswitch-checkbox{
+    display: none;
+}
+
+
+/*align radiobuttons in row*/
+.sort-item{
+    float: left;
+    padding: 0 1em 0 0;
+}
+
+/*sort buttons */
+/*dont show standard box*/
+.sort-item-radio{
+    display: none;
+}
+
+/*block keeps elements together in case screen doesnt have enough space*/
+.sort-item-radio-label,
+.finishswitch-label {
+    display: block;
+}
+/*color indicates checked radiobutton*/
+.sort-item-radio:checked + .sort-item-radio-label,
+.finishswitch-checkbox:checked + .finishswitch-label{
+    /*use color as indicator - in case other styles are not set */
+    color: blue;
+}
+
+/*main section*/
+.list-notes{
+    margin-top:1em;
+}
+
+.item-header, .item-body{
+    display:flex;
+    clear: left;
+}
+
+.item-body {
+    margin-bottom: 1em;
+}
+
+.header-date, .body-checkbox {
+    width: 20%;
+}
+
+.header-title {
+    width:40%;
+}
+
+.header-importance {
+    width:20%;
+}
+
+.header-date p {
+    padding-left:0;
+}
+
+.body-text {
+    width:70%;
+    max-height: 4em;
+    /*dont display overflow text*/
+    overflow: hidden;
+}
+
+.body-text  p {
+    margin:0;
+}
+
+.body-edit {
+    width:5%;
+}
+
+
+
+/*hide original control*/
+.checkbox-input {
+    visibility: hidden;
+}
+
+/*create background*/
+.checkbox-background{
+
+    width: 23px;
+    height: 23px;
+    float: left;
+
+}
+
+/*create control*/
+.checkbox-label {
+    cursor: pointer;
+    position: relative;
+    width: 25px;
+    height: 25px;
+    margin-top: 4px;
+    /*adjust text near to control*/
+    left: -51px;
+}
+
+/*position text 'finished' */
+.checkbox-label span {
+
+    position: relative;
+    top: 5px;
+    left: 34px
+}
+
+/*create a tick out of a border and using degree*/
+.checkbox-label::after{
+    opacity: 0.2;
+    content: '';
+    position: absolute;
+    width: 9px;
+    height: 5px;
+    margin-top: 7px;
+    left: 6px;
+    border: 3px solid #333;
+    border-top: none;
+    border-right: none;
+
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+}
+
+/*unset state*/
+.checkbox-label:hover::after {
+    opacity: 0.5;
+}
+
+/* when ticked then highlight tick*/
+.checkbox-input:checked ~ .checkbox-label::after {
+    opacity: 1;
+}

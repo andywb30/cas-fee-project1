@@ -1,0 +1,60 @@
+
+
+p {
+    margin: 0;
+    padding-top: 0.2em;
+}
+
+/*align according to flashes */
+.importance-label p {
+    padding-top: 0.5em;
+}
+.importance-pic{
+    cursor:pointer;
+}
+#finishby{
+    cursor:pointer;
+}
+
+#title, #finishby {
+    padding: 0;
+}
+.title, .description, .importance, .finishby{
+    clear: left;
+    padding: 0;
+}
+
+.left {
+    width:20%;
+}
+
+
+.right{
+    width: 80%;
+}
+.left, .right{
+    float: left;
+    margin: 0.5em 0 0.5em 0;
+}
+
+.save-cancel{
+   clear: left;
+}
+
+.save, .cancel {
+    float: left;
+    margin: 1em 1em 1em 0;
+}
+
+.importance-pic {
+    height: 2em;
+    opacity:1;
+}
+
+.importance-pic-inactive {
+    opacity: 0.4;
+}
+
+.importance-radio {
+    display: none;
+}

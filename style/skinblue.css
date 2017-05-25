@@ -1,0 +1,81 @@
+
+
+body {
+    font-family:sans-serif, Arial;
+}
+
+p, span{
+    color: dimgrey;
+}
+
+.style-choice select{
+    background:lightblue;
+}
+
+.skin-active-input,
+.skin-active{
+    border: lightblue solid 0.1em ;
+    border-radius: 0.2em;
+
+    color: dimgrey;
+    background: white;
+    text-decoration: none;
+    padding: 0.2em;
+
+    cursor:pointer;
+}
+
+.skin-inactive{
+    border: lightgrey solid 0.1em ;
+    border-radius: 0.2em;
+
+    padding: 0.2em;
+}
+
+/*special paddings, margins*/
+.description-textarea,
+.body-text{
+
+    padding: 0 0.1em 0 0.1em;
+    margin: 0.1em 0.3em 0.1em 0;
+
+}
+.description-textarea{
+    border-color: lightblue;
+    font-family: inherit;
+}
+
+.notestitle h1{
+    background-color: lightblue;
+}
+
+/*checked and label*/
+.sort-item-radio:checked + .sort-item-radio-label,
+.finishswitch-checkbox:checked + .finishswitch-label
+{
+    background-color:lightblue;
+    color: dimgrey;
+}
+
+.sort-item {
+    padding: 0;
+}
+
+/*proper alignment to div*/
+.body-edit{
+    margin-top: 0.438em;
+}
+
+/*draw line after each item*/
+.item-header {
+    border-top: solid aliceblue 0.1em;
+
+}
+
+/*create background*/
+.checkbox-background{
+
+    background: lightcyan;
+    border: lightblue solid 1px;
+    border-radius: 3px;
+}
