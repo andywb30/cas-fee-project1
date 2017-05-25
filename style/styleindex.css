@@ -97,17 +97,30 @@
 
 .body-text {
     width:70%;
-    max-height: 4em;
+    max-height: 3.8em;
     /*dont display overflow text*/
     overflow: hidden;
+/*special paddings, margins*/
+    padding: 0 0.1em 0.2em 0.1em;
+    margin: 0.1em 0.3em 0 0;
 }
 
+
+/*special paddings, margins*/
+.body-text{
+
+    padding: 0 0.1em 0.2em 0.1em;
+    margin: 0.1em 0.3em 0 0;
+
+}
 .body-text  p {
     margin:0;
 }
 
 .body-edit {
     width:5%;
+    /*proper alignment to div*/
+    margin-top: 0.438em;
 }
 
 

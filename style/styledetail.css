@@ -37,6 +37,13 @@ p {
     margin: 0.5em 0 0.5em 0;
 }
 
+
+/*special paddings, margins*/
+.description-textarea{
+    padding: 0 0.1em 0 0.1em;
+    margin: 0.1em 0.3em 0.1em 0;
+}
+
 .save-cancel{
    clear: left;
 }

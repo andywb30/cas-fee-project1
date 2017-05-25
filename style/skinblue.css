@@ -32,16 +32,9 @@ p, span{
     padding: 0.2em;
 }
 
-/*special paddings, margins*/
-.description-textarea,
-.body-text{
-
-    padding: 0 0.1em 0 0.1em;
-    margin: 0.1em 0.3em 0.1em 0;
-
-}
 .description-textarea{
     border-color: lightblue;
+    /*necessary to have proper em*/
     font-family: inherit;
 }
 
@@ -61,10 +54,7 @@ p, span{
     padding: 0;
 }
 
-/*proper alignment to div*/
-.body-edit{
-    margin-top: 0.438em;
-}
+
 
 /*draw line after each item*/
 .item-header {
