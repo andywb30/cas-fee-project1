@@ -53,11 +53,6 @@ p {
     margin: 1em 1em 1em 0;
 }
 
-.importance-pic {
-    height: 2em;
-    opacity:1;
-}
-
 .importance-pic-inactive {
     opacity: 0.4;
 }
