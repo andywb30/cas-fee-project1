@@ -15,3 +15,8 @@ body{
 .notestitle h1{
     margin-bottom:1.5em;
 }
+
+.importance-pic {
+    height: 2em;
+    opacity:1;
+}
