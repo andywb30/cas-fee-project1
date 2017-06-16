@@ -1,0 +1,25 @@
+{
+  "name": "cas-fee-project1",
+  "version": "1.0.0",
+  "description": "# TODO/Problems: safari+firefox cant handle input type=\"date\" - need a proper javascript-lib chrome cant handle dropdown event propery",
+  "main": "controllerIndex.js",
+  "dependencies": {
+    "handlebars": "^4.0.10",
+    "jquery": "^3.2.1",
+    "moment": "^2.18.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andywb30/cas-fee-projekt1.git"
+  },
+  "author": "andywb30",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/andywb30/cas-fee-projekt1/issues"
+  },
+  "homepage": "https://github.com/andywb30/cas-fee-projekt1#readme"
+}
