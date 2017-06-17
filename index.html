@@ -27,7 +27,7 @@
 
         <div class="style-choice">
             <form>
-                <select class="skin-active-input choice-select" id="choice-select" onclick="changeStyleSkin()">
+                <select class="skin-active-input choice-select" id="style-select">
                     <option value="1">Blue</option>
                     <option value="2">Black-White</option>
 
@@ -40,7 +40,7 @@
 
 <main>
 
-    <div class="control-bar">
+    <div class="control-bar" id="control-bar">
         <div>
             <div class="sort-item">
                 <input type="radio" class="sort-item-radio" id="i1" name="sort" value="finish-date">
@@ -64,95 +64,91 @@
     </div>
 
     <div class="list-notes" id="list-notes">
-        <div class="item-note">
+    </div>
+
+    <script id="noteListTemplate" type="text/x-handlebars-template">
+
+        {{#each this}}
+        <div class="item-note" data-id="{{this.id}}">
             <div class="item-header">
                 <div class="header-date">
-                    <p>Nächsten Mittwoch</p>
+                    <p>{{this.finishby}}</p>   <!-- Nächsten Mittwoch -->
                 </div>
                 <div class="header-title">
-                    <p>CAS-FEE Project 1</p>
+                    <p>{{this.title}}</p> <!-- CAS-FEE Project 1 -->
                 </div>
                 <div class="header-importance">
-                    <p>flash</p>
+
+                        <div class="importance-pic-wrapper" id="importance-pic">
+
+                            {{#ifCond this 1}}
+                            <img class="importance-pic" src="assets/flash.svg">
+                            {{/ifCond}}
+                            {{#ifCond this 2}}
+                            <img class="importance-pic" src="assets/flash.svg">
+                            <img class="importance-pic" src="assets/flash.svg">
+                            {{/ifCond}}
+                            {{#ifCond this 3}}
+                            <img class="importance-pic" src="assets/flash.svg">
+                            <img class="importance-pic" src="assets/flash.svg">
+                            <img class="importance-pic" src="assets/flash.svg">
+                            {{/ifCond}}
+                            {{#ifCond this 4}}
+                            <img class="importance-pic" src="assets/flash.svg">
+                            <img class="importance-pic" src="assets/flash.svg">
+                            <img class="importance-pic" src="assets/flash.svg">
+                            <img class="importance-pic" src="assets/flash.svg">
+                            {{/ifCond}}
+                            {{#ifCond this 5}}
+                            <img class="importance-pic" src="assets/flash.svg">
+                            <img class="importance-pic" src="assets/flash.svg">
+                            <img class="importance-pic" src="assets/flash.svg">
+                            <img class="importance-pic" src="assets/flash.svg">
+                            <img class="importance-pic" src="assets/flash.svg">
+                            {{/ifCond}}
+
+                        </div>
+
+
+
                 </div>
 
             </div>
             <div class="item-body">
                 <div class="body-checkbox">
-                    <input type="checkbox" class="checkbox-input" id="c10" name="done" value="Finished">
+                    <input type="checkbox" class="checkbox-input" id="f{{this.id}}" {{#if this.finished}} checked {{/if}} name="done" value="Finished">
                     <div class="checkbox-background"></div>
-                    <label class="checkbox-label" for="c10"><span>Finished</span></label>
+                    <label class="checkbox-label" for="f{{this.id}}"><span>Finished</span></label>
 
                 </div>
 
                 <div class="skin-inactive body-text">
-                    <p>test test test <br> adölfj alödkfj </p>
+                    <p>{{this.description}}</p>  <!-- desc -->
                 </div>
 
                 <div class="body-edit">
-                    <a href="detail.html" class="skin-active">Edit</a>
+                    <a href="detail.html#{{this.id}}" class="skin-active">Edit</a>
 
                 </div>
-            </div>
-
-
-            <div class="item">
-                <div class="item-header">
-                    <div class="header-date">
-                        <p>heute</p>
-                    </div>
-                    <div class="header-title">
-                        <p>CAS-FEE KKKK</p>
-                    </div>
-                    <div class="header-importance">
-                        <p>flash flash</p>
-                    </div>
-
-                </div>
-                <div class="item-body">
-                    <div class="body-checkbox">
-                        <input type="checkbox" class="checkbox-input" id="c11" name="done" value="Finished">
-                        <div class="checkbox-background"></div>
-                        <label class="checkbox-label" for="c11"><span>Finished</span></label>
-                    </div>
-
-                    <div class="skin-inactive body-text">
-                        <p>test tekhjkjhst test <br> adölfj ast <br> adölfj ast <br> adölfj alödkfj </p>
-                    </div>
-
-                    <div class="body-edit">
-                            <a href="detail.html" class="skin-active">Edit</a>
-                    </div>
-                </div>
-
             </div>
 
         </div>
-    </div>
+        {{/each}}
+    </script>
+
+
+
 </main>
 
 
 <script src="js/jquery.min.js"></script>
-<script>
-    function changeStyleSkin(){
-        var x = document.getElementById("choice-select");
-        var i = x.selectedIndex;
-        console.log("selectedIx:"+i);
-        switch(i) {
-            case 0:
-                document.getElementById("styleskin").setAttribute("href","style/skinblue.css");
-                break;
-            case 1:
-                document.getElementById("styleskin").setAttribute("href","style/skinyellow.css");
-                break;
-            default:
-                break;
-        }
+<script src="js/moment.min.js"></script>
+<script src="js/handlebars.min.js"></script>
 
-    }
-
-</script>
-
+<script src="js/noteStorage.js"></script>
+<script src="js/shared.js"></script>
+<script src="js/handleBarRender.js"></script>
+<script src="js/controllerIndex.js"></script>
 
 
 </body>
