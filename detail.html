@@ -24,7 +24,7 @@
             </div>
 
             <div class="right ">
-                <input type="text" class="skin-active-input" onclick="" id="title" name="title" >
+                <input type="text" class="skin-active-input" id="title" name="title" >
             </div>
         </div>
 
@@ -34,7 +34,7 @@
             </div>
 
             <div class="right" id="form-description">
-                <textarea rows="4" cols="50" class="skin-active-input description-textarea"id="description" name="description"></textarea>
+                <textarea rows="4" cols="50" class="skin-active-input description-textarea" id="description" name="description"></textarea>
             </div>
         </div>
 
@@ -45,13 +45,13 @@
 
             <div class="right importance-right">
 
-                <div class="importance-pic-wrapper">
+                <div class="importance-pic-wrapper" id="importance-pic">
 
-                    <img class="importance-pic" id="pic1" src="assets/flash.svg" onclick="flashShowHide(this.id)">
-                    <img class="importance-pic" id="pic2" src="assets/flash.svg" onclick="flashShowHide(this.id)">
-                    <img class="importance-pic importance-pic-inactive" id="pic3" src="assets/flash.svg" onclick="flashShowHide(this.id)" >
-                    <img class="importance-pic importance-pic-inactive" id="pic4" src="assets/flash.svg" onclick="flashShowHide(this.id)" >
-                    <img class="importance-pic importance-pic-inactive" id="pic5" src="assets/flash.svg" onclick="flashShowHide(this.id)" >
+                    <img class="importance-pic" id="pic1" src="assets/flash.svg" data-flash-id="1">
+                    <img class="importance-pic" id="pic2" src="assets/flash.svg" data-flash-id="2">
+                    <img class="importance-pic importance-pic-inactive" id="pic3" src="assets/flash.svg" data-flash-id="3">
+                    <img class="importance-pic importance-pic-inactive" id="pic4" src="assets/flash.svg" data-flash-id="4">
+                    <img class="importance-pic importance-pic-inactive" id="pic5" src="assets/flash.svg" data-flash-id="5">
 
                 </div>
 
@@ -74,7 +74,7 @@
             </div>
             <div class="right">
                 <div class="save">
-                    <button type="submit" class="skin-active">Speichern</button>
+                    <button type="submit" id="detailSubmit" class="skin-active">Speichern</button>
                 </div>
 
                 <div class="cancel">
@@ -85,7 +85,17 @@
     </form>
 </main>
 
-<script scr="node_modules/jquery/dist/jquery.min.js"></script>
+
+<script src="js/jquery.min.js"></script>
+<script src="js/moment.min.js"></script>
+<script src="js/handlebars.min.js"></script>
+
+<script src="js/noteStorage.js"></script>
+<script src="js/shared.js"></script>
+<script src="js/controllerDetail.js"></script>
+<script src="js/handleBarRender.js"></script>
+
+
 <!--
 <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
 -->
@@ -117,31 +127,7 @@
 
 <script type="text/javascript">
     /*TODO: move function to javscript file later*/
-    function flashShowHide(id)
-    {
-        'use strict';
-        var i = id[id.length-1];
-        var newid = "";
-        var y = 0;
-        for( ; y<5;y++)
-        {
-            newid = "pic"+(y+1);
-            var classtest = document.getElementById(newid);
 
-            if (classtest.classList.contains("importance-pic-inactive" )  ) {
-                if ( y <= (i -1)) {
-                   document.getElementById(newid).classList.remove('importance-pic-inactive');
-                   // $("#" + this.newid).remove('importance-pic-inactive');
-                }
-            }
-            else {
-                if ( y > (i -1) ) {
-                    document.getElementById(newid).classList.add('importance-pic-inactive');
-                   // $("#" + this.newid).add('importance-pic-inactive');
-                }
-            }
-        }
-    }
 </script>
 
 
