@@ -34,6 +34,7 @@
             </div>
 
             <div class="right" id="form-description">
+                <!-- dont use form - not supported bs IE,Edge -->
                 <textarea rows="4" cols="50" class="skin-active-input description-textarea" id="description" name="description"></textarea>
             </div>
         </div>
@@ -64,7 +65,7 @@
             </div>
 
             <div class="right">
-                <input type="date" class="skin-active-input" id="finishby" name="finishby">
+                <input type="date"  lang="de" class="skin-active-input" id="finishby" name="finishby">
             </div>
         </div>
 
@@ -74,11 +75,11 @@
             </div>
             <div class="right">
                 <div class="save">
-                    <button type="submit" id="detailSubmit" class="skin-active">Speichern</button>
+                    <input type="button" id="detailSubmit" class="skin-active" value="Speichern">
                 </div>
 
                 <div class="cancel">
-                    <input type="button" class="skin-active" value="Abbrechen" onclick="window.location.href='index.html'">
+                    <input type="button" id="detailCancel" class="skin-active" value="Abbrechen">
                 </div>
             </div>
         </div>
@@ -89,6 +90,7 @@
 <script src="js/jquery.min.js"></script>
 <script src="js/moment.min.js"></script>
 <script src="js/handlebars.min.js"></script>
+<script src="js/date-input-polyfill.dist.js"></script>
 
 <script src="js/noteStorage.js"></script>
 <script src="js/shared.js"></script>
@@ -125,10 +127,6 @@
 
 -->
 
-<script type="text/javascript">
-    /*TODO: move function to javscript file later*/
-
-</script>
 
 
 </body>
