@@ -42,8 +42,8 @@ p, span{
 .sort-item-radio:checked + .sort-item-radio-label,
 .finishswitch-checkbox:checked + .finishswitch-label
 {
-    background-color:dimgrey;
-    color: antiquewhite;
+    background-color:gainsboro;
+    color: darkgoldenrod;
 }
 
 .sort-item {
