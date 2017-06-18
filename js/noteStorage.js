@@ -16,9 +16,10 @@ let noteStorage = (function () {
             this.description = description;
         /*    this.descriptionBr = '"' + description.replace("\n", '"\n<br>\n"') + '"';
           */  this.importance = importance;
-            this.finishby = finishby;
+            this.finishby = dateSort(finishby);
+            this.finishbyNice = dateNice(this.finishby);
             this.finished = false;
-            this.createdAt = moment().fromNow();
+            this.createdAt = moment();
 
         }
     }
@@ -107,8 +108,9 @@ let noteStorage = (function () {
         note.description = description;
       /*  note.descriptionBr = '"' + description.replace("\n", '"\n<br>\n"') + '"'; */
         note.importance = importance;
-        note.finishby = finishby;
+        note.finishby = dateSort(finishby);
         note.finished = finished;
+        note.finishbyNice = dateNice(note.finishby);
         storageSaveNotes();
     }
     function getNoteById(id){
@@ -119,7 +121,7 @@ let noteStorage = (function () {
 
     }
 
-
+    // storage functions
     function storageReadNotes() {
         const noteStorage = JSON.parse(localStorage.getItem("notes"));
         if (noteStorage !== null) {
@@ -176,6 +178,28 @@ let noteStorage = (function () {
     }
     function storageSaveConfigStyle(style){
         localStorage.setItem("configStyle",style);
+    }
+
+    // TODO: try to remove dateNice/dateSort. Use the same methods from shared.js
+    function dateNice(fby){
+        if( moment(fby).isValid())     {
+            return moment(fby).format("DD.MM.YYYY");
+        }
+        return null;
+    }
+    function dateSort(fby){
+        if (!moment(fby).isValid()) {
+            if (moment(fby, "DD.MM.YYYY").isValid()) {
+                return moment(fby, "DD.MM.YYYY").format("YYYY-MM-DD")
+            }
+            if (moment(fby, "YYYY-DD-MM").isValid()) {
+                return moment(fby, "YYYY-DD-MM").format("YYYY-MM-DD")
+            }
+            return null;
+        }
+
+        return fby;
+
     }
 
     // revealing public functions
