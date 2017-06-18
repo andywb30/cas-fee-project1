@@ -31,10 +31,34 @@ let shared = (function () {
         }
     }
 
+    // helper functions datemanagement
+    function dateNice(fby){
+        if( moment(fby).isValid())     {
+            return moment(fby).format("DD.MM.YYYY");
+        }
+        return null;
+    }
+    function dateSort(fby){
+        if (!moment(fby).isValid()) {
+            if (moment(fby, "DD.MM.YYYY").isValid()) {
+                return moment(fby, "DD.MM.YYYY").format("YYYY-MM-DD")
+            }
+            if (moment(fby, "YYYY-DD-MM").isValid()) {
+                return moment(fby, "YYYY-DD-MM").format("YYYY-MM-DD")
+            }
+            return null;
+        }
+
+        return fby;
+
+    }
+
     // revealing public functions
     return {
         styleSelectEventListener : styleSelectEventListener,
-        styleSelect : styleSelect
+        styleSelect : styleSelect,
+        dateSort : dateSort,
+        dateNice : dateNice
     }
 
 
