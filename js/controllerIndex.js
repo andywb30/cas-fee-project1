@@ -1,10 +1,11 @@
 /**
- * Created by awedag on 14.06.17.
+ * Created by wildi on 14.06.17.
  */
 
 "use strict";
 
-window.onload = function(){
+
+const indexController = function(){
 
 
     // initialization
@@ -12,11 +13,13 @@ window.onload = function(){
 
     init();
     function init(){
+        console.log("loading indexonctoller");
          template = document.getElementById("noteListTemplate").innerText;
 
         shared.styleSelect();
         loadData();
 
+        // TODO: read and set sort and filters and style according config
     }
     function loadData() {
 
@@ -41,6 +44,9 @@ window.onload = function(){
 
     const styleSelect  = document.getElementById("style-select");
     styleSelect.addEventListener("click",shared.styleSelectEventListener);
+
+    // chrome: need change too to get selected, as "click" is fired before selected
+    styleSelect.addEventListener("change",shared.styleSelectEventListener);
 
 
     // Listeners
@@ -72,14 +78,14 @@ window.onload = function(){
                 let item = controlID.substr(1);
 
                 console.log("finished status now:"+document.getElementById(controlID).checked);
-                    noteStorage.updateNoteFinished(item, !document.getElementById(controlID).checked);
+                noteStorage.updateNoteFinished(item, !document.getElementById(controlID).checked);
+                loadData();
 
             }
         }
     }
 
-
-
 };
 
+window.onload = indexController();
 
