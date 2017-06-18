@@ -34,9 +34,16 @@ window.onload = function() {
     const detailSubmit = document.getElementById("detailSubmit");
     detailSubmit.addEventListener("click",buttonSubmitListener);
 
+    const detailCancel = document.getElementById("detailCancel");
+    detailCancel.addEventListener("click",buttonCancelListener);
+
     const importantPic = document.getElementById("importance-pic");
     // event bubbler
     importantPic.addEventListener("click",flashShowHideListener);
+
+    const dateStuff = document.getElementById("finishby");
+    dateStuff.addEventListener("click",datePickerListener);
+    dateStuff.addEventListener("change",datePickerListener);
 
     function loadNoteToView() {
         if (notesId !== undefined) {
@@ -46,7 +53,17 @@ window.onload = function() {
 
                 document.getElementById("title").value = note.title;
                 document.getElementById("description").value = note.description;
-                document.getElementById("finishby").value = note.finishby;
+
+                console.log(navigator.appCodeName+" :_: "+navigator.appName+" :_: "+navigator.appVersion +" :_");
+                console.log("datefucntion: "+checkDateInput());
+                // check if DateInput works in browser
+                if(!checkDateInput()){
+                    document.getElementById("finishby").value = note.finishbyNice;
+                }
+                else
+                {
+                    document.getElementById("finishby").value = note.finishby;
+                }
                 setImportanceRating(note.importance);
 
             }
@@ -71,6 +88,11 @@ window.onload = function() {
             noteStorage.addNote(title, desc, importance, finishby);
         }
         goBackToIndex();
+
+    }
+
+    function buttonCancelListener(){
+        goBackToIndex();
     }
 
     function flashShowHideListener(event)
@@ -80,12 +102,22 @@ window.onload = function() {
     }
 
 
+    function datePickerListener(event){
+        console.log(document.getElementById("finishby").value);
+        // formatting specially for firefox isnt nice
+          if(!checkDateInput()) {
+              if (shared.dateNice(document.getElementById("finishby").value) !== null) {
+                  document.getElementById("finishby").value = shared.dateNice(document.getElementById("finishby").value);
+              }
+          }
+        console.log(event);
+
+    }
     // helperfunctions
     // importance show flash black or grey (=inactive)
 
     function goBackToIndex(){
-        window.location.href = 'index.html';
-        window.history.back();
+        window.location.href = "index.html";
 
     }
     function getImportanceRate() {
@@ -131,5 +163,17 @@ window.onload = function() {
             }
         }
     }
+
+    // nice little hack to find out if the browser is able to handle input type=date
+    function checkDateInput() {
+        let input = document.createElement('input');
+        input.setAttribute('type','date');
+
+        let notADateValue = 'not-a-date';
+        input.setAttribute('value', notADateValue);
+
+        return (input.value !== notADateValue);
+    }
+
 
 };
