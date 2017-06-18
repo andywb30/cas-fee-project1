@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="style/stylereset.css">
     <link rel="stylesheet" href="style/stylegeneric.css">
     <link rel="stylesheet" href="style/styleindex.css">
-    <link id="styleskin" rel="stylesheet" href="style/skinblue.css">
+    <link id="styleskin" rel="stylesheet" href="">
 
 
 </head>
@@ -72,7 +72,7 @@
         <div class="item-note" data-id="{{this.id}}">
             <div class="item-header">
                 <div class="header-date">
-                    <p>{{this.finishby}}</p>   <!-- Nächsten Mittwoch -->
+                    <p>{{this.finishbyNice}}</p>   <!-- Nächsten Mittwoch -->
                 </div>
                 <div class="header-title">
                     <p>{{this.title}}</p> <!-- CAS-FEE Project 1 -->
@@ -126,10 +126,12 @@
                     <p>{{this.description}}</p>  <!-- desc -->
                 </div>
 
+                {{#unless this.finished}}
                 <div class="body-edit">
                     <a href="detail.html#{{this.id}}" class="skin-active">Edit</a>
 
                 </div>
+                {{/unless}}
             </div>
 
         </div>
