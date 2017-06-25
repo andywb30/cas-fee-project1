@@ -14,6 +14,8 @@ window.onload = function() {
 
     let editMode = false;
 
+    // TODO: only submit if title is set.
+    // TODO: date verification in case no date entered - or rubbish
     init();
     function init(){
 
@@ -48,8 +50,8 @@ window.onload = function() {
     function loadNoteToView() {
         if (notesId !== undefined) {
 
-            let note = noteStorage.getNoteById(notesId);
-            if (note !== undefined) {
+           noteStorage.getNoteById(renderDetail,notesId);
+           /* if (note !== undefined) {
 
                 document.getElementById("title").value = note.title;
                 document.getElementById("description").value = note.description;
@@ -66,7 +68,28 @@ window.onload = function() {
                 }
                 setImportanceRating(note.importance);
 
+            }*/
+
+        }
+    }
+
+    function renderDetail(note){
+        if (note !== undefined) {
+
+            document.getElementById("title").value = note.title;
+            document.getElementById("description").value = note.description;
+
+            console.log(navigator.appCodeName+" :_: "+navigator.appName+" :_: "+navigator.appVersion +" :_");
+            console.log("datefucntion: "+checkDateInput());
+            // check if DateInput works in browser
+            if(!checkDateInput()){
+                document.getElementById("finishby").value = note.finishbyNice;
             }
+            else
+            {
+                document.getElementById("finishby").value = note.finishby;
+            }
+            setImportanceRating(note.importance);
 
         }
     }

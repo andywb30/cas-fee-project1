@@ -1,3 +1,6 @@
 .idea/
 trash.html
 .DS_Store
+node_modules/
+data/
+bin/data

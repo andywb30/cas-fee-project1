@@ -13,22 +13,49 @@ let shared = (function () {
         let x = document.getElementById("style-select");
         let i = x.selectedIndex;
         console.log("selectedIx:" + i);
-        noteStorage.configStyleSave(i);
+        configStorage.updateStyle(i);
         styleSelect();
     }
 
     function  styleSelect(){
-        let i = noteStorage.configStyleRead();
+        let i = configStorage.readStyle();
+        console.log("styleSelect:"+i);
         switch (i) {
             case 0:
-                document.getElementById("styleskin").setAttribute("href", "style/skinblue.css");
+                document.getElementById("styleskin").setAttribute("href", "../stylesheets/skinblue.css");
+                if (document.getElementById("style-select")!== null) {
+                    document.getElementById("style-select").selectedIndex = i;
+                }
                 break;
             case 1:
-                document.getElementById("styleskin").setAttribute("href", "style/skinyellow.css");
-                break;
+                document.getElementById("styleskin").setAttribute("href", "../stylesheets/skinyellow.css");
+                if (document.getElementById("style-select")!== null) {
+                    document.getElementById("style-select").selectedIndex = i;
+                } break;
             default:
                 break;
         }
+    }
+
+    function sortSet() {
+        let i = configStorage.readSort();
+        console.log("sort:" + i);
+        if(i >0) {
+            document.getElementById('i' + i).checked = true;
+        }
+    }
+
+    function filterSet(){
+        let i = configStorage.readFilter();
+        console.log("filter:" + i);
+        if (i) {
+            document.getElementById("c1").checked = true;
+        }
+    }
+
+    function styleSet(){
+
+
     }
 
     // helper functions datemanagement
@@ -57,6 +84,8 @@ let shared = (function () {
     return {
         styleSelectEventListener : styleSelectEventListener,
         styleSelect : styleSelect,
+        sortSet : sortSet,
+        filterSet : filterSet,
         dateSort : dateSort,
         dateNice : dateNice
     }

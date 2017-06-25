@@ -17,20 +17,25 @@ const indexController = function(){
          template = document.getElementById("noteListTemplate").innerText;
 
         shared.styleSelect();
+        shared.sortSet();
+        shared.filterSet();
         loadData();
 
-        // TODO: read and set sort and filters and style according config
     }
     function loadData() {
 
         /* add dummy entires
          let notes = noteStorage.addNote("bsp","blablabla",5,"finishby 15.5.2015");
         */
+
+        /*
         let notes = noteStorage.getNotes();
         let notesRendered = handleBarRender.renderNotes(template,notes);
         if (notesRendered !== null) {
             document.getElementById("list-notes").innerHTML = notesRendered;
-        }
+        }*/
+
+        noteStorage.getNotes("list-notes");
 
         /* document.getElementById("list-notes").innerHTML =  'neuer <b>fetter<\/b> Text'; */
     }
@@ -56,14 +61,14 @@ const indexController = function(){
         if (controlID !== null) {
             if ( controlID.substr(0,1) === "i" ){
                 let sortBy = controlID.substr(1);
-                noteStorage.updateSortBy(sortBy);
+                configStorage.updateSort(sortBy);
                 document.getElementById(controlID).checked = true;
             }
             if ( controlID.substr(0,1) === "c" ){
                 // dont switch checked to opposite as the browser doesit anyway->prevent do it here again
              /*   document.getElementById(controlID).checked =  !document.getElementById(controlID).checked;
                */
-                noteStorage.updateFilter(!document.getElementById(controlID).checked);
+                configStorage.updateFilter(!document.getElementById(controlID).checked);
                 console.log("SortSetEventListener" +   document.getElementById(controlID).checked);
             }
         }

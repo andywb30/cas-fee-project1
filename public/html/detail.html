@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../stylesheets/stylereset.css">
+    <link rel="stylesheet" href="../stylesheets/stylegeneric.css">
+    <link rel="stylesheet" href="../stylesheets/styledetail.css">
+    <link id="styleskin" rel="stylesheet" href="../stylesheets/skinblue.css">
+
+</head>
+<body>
+
+<main>
+
+    <div class="notestitle">
+        <h1>Notes</h1>
+    </div>
+
+    <form id="note-input">
+        <div class="title">
+            <div class="left ">
+                <p>Title</p>
+            </div>
+
+            <div class="right ">
+                <input type="text" class="skin-active-input" id="title" name="title" >
+            </div>
+        </div>
+
+        <div class="description">
+            <div class="left">
+                <p>Beschreibung</p>
+            </div>
+
+            <div class="right" id="form-description">
+                <!-- dont use form - not supported bs IE,Edge -->
+                <textarea rows="4" cols="50" class="skin-active-input description-textarea" id="description" name="description"></textarea>
+            </div>
+        </div>
+
+        <div class="importance">
+            <div class="left importance-label">
+                <p>Wichtigkeit</p>
+            </div>
+
+            <div class="right importance-right">
+
+                <div class="importance-pic-wrapper" id="importance-pic">
+
+                    <img class="importance-pic" id="pic1" src="../images/flash.svg" data-flash-id="1">
+                    <img class="importance-pic" id="pic2" src="../images/flash.svg" data-flash-id="2">
+                    <img class="importance-pic importance-pic-inactive" id="pic3" src="../images/flash.svg" data-flash-id="3">
+                    <img class="importance-pic importance-pic-inactive" id="pic4" src="../images/flash.svg" data-flash-id="4">
+                    <img class="importance-pic importance-pic-inactive" id="pic5" src="../images/flash.svg" data-flash-id="5">
+
+                </div>
+
+            </div>
+        </div>
+
+        <div class="finishby">
+            <div class="left">
+                <p>Erledigt bis am</p>
+            </div>
+
+            <div class="right">
+                <input type="date"  lang="de" class="skin-active-input" id="finishby" name="finishby">
+            </div>
+        </div>
+
+        <div class="save-cancel">
+            <div class="left filler">
+
+            </div>
+            <div class="right">
+                <div class="save">
+                    <input type="button" id="detailSubmit" class="skin-active" value="Speichern">
+                </div>
+
+                <div class="cancel">
+                    <input type="button" id="detailCancel" class="skin-active" value="Abbrechen">
+                </div>
+            </div>
+        </div>
+    </form>
+</main>
+
+
+
+<script src="../javascripts/jquery.min.js"></script>
+<script src="../javascripts/moment.min.js"></script>
+<script src="../javascripts/handlebars.min.js"></script>
+
+<script src="../javascripts/ajaxUtil.js"></script>
+<script src="../javascripts/storage.js"></script>
+<script src="../javascripts/configStorage.js"></script>
+<script src="../javascripts/shared.js"></script>
+<script src="../javascripts/noteStorage.js"></script>
+<script src="../javascripts/handleBarRender.js"></script>
+<script src="../javascripts/controllerDetail.js"></script>
+
+
+
+</body>
+</html>

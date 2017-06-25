@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link rel="stylesheet" href="style/stylereset.css">
-    <link rel="stylesheet" href="style/stylegeneric.css">
-    <link rel="stylesheet" href="style/styleindex.css">
-    <link id="styleskin" rel="stylesheet" href="">
+    <link rel="stylesheet" href="../stylesheets/stylereset.css">
+    <link rel="stylesheet" href="../stylesheets/stylegeneric.css">
+    <link rel="stylesheet" href="../stylesheets/styleindex.css">
+    <link id="styleskin" rel="stylesheet" href="../stylesheets/skinblue.css">
 
 
 </head>
@@ -82,29 +82,29 @@
                         <div class="importance-pic-wrapper" id="importance-pic">
 
                             {{#ifCond this 1}}
-                            <img class="importance-pic" src="assets/flash.svg">
+                            <img class="importance-pic" src="../images/flash.svg">
                             {{/ifCond}}
                             {{#ifCond this 2}}
-                            <img class="importance-pic" src="assets/flash.svg">
-                            <img class="importance-pic" src="assets/flash.svg">
+                            <img class="importance-pic" src="../images/flash.svg">
+                            <img class="importance-pic" src="../images/flash.svg">
                             {{/ifCond}}
                             {{#ifCond this 3}}
-                            <img class="importance-pic" src="assets/flash.svg">
-                            <img class="importance-pic" src="assets/flash.svg">
-                            <img class="importance-pic" src="assets/flash.svg">
+                            <img class="importance-pic" src="../images/flash.svg">
+                            <img class="importance-pic" src="../images/flash.svg">
+                            <img class="importance-pic" src="../images/flash.svg">
                             {{/ifCond}}
                             {{#ifCond this 4}}
-                            <img class="importance-pic" src="assets/flash.svg">
-                            <img class="importance-pic" src="assets/flash.svg">
-                            <img class="importance-pic" src="assets/flash.svg">
-                            <img class="importance-pic" src="assets/flash.svg">
+                            <img class="importance-pic" src="../images/flash.svg">
+                            <img class="importance-pic" src="../images/flash.svg">
+                            <img class="importance-pic" src="../images/flash.svg">
+                            <img class="importance-pic" src="../images/flash.svg">
                             {{/ifCond}}
                             {{#ifCond this 5}}
-                            <img class="importance-pic" src="assets/flash.svg">
-                            <img class="importance-pic" src="assets/flash.svg">
-                            <img class="importance-pic" src="assets/flash.svg">
-                            <img class="importance-pic" src="assets/flash.svg">
-                            <img class="importance-pic" src="assets/flash.svg">
+                            <img class="importance-pic" src="../images/flash.svg">
+                            <img class="importance-pic" src="../images/flash.svg">
+                            <img class="importance-pic" src="../images/flash.svg">
+                            <img class="importance-pic" src="../images/flash.svg">
+                            <img class="importance-pic" src="../images/flash.svg">
                             {{/ifCond}}
 
                         </div>
@@ -121,6 +121,10 @@
                     <label class="checkbox-label" for="f{{this.id}}"><span>Finished</span></label>
 
                 </div>
+                <!-- div class="body-checkbox-label">
+                    <label><span>Finished</span></label>
+                TODO: try to separaet label from button
+                </div -->
 
                 <div class="skin-inactive body-text">
                     <p>{{this.description}}</p>  <!-- desc -->
@@ -143,14 +147,17 @@
 </main>
 
 
-<script src="js/jquery.min.js"></script>
-<script src="js/moment.min.js"></script>
-<script src="js/handlebars.min.js"></script>
+<script src="../javascripts/jquery.min.js"></script>
+<script src="../javascripts/moment.min.js"></script>
+<script src="../javascripts/handlebars.min.js"></script>
 
-<script src="js/noteStorage.js"></script>
-<script src="js/shared.js"></script>
-<script src="js/handleBarRender.js"></script>
-<script src="js/controllerIndex.js"></script>
+<script src="../javascripts/ajaxUtil.js"></script>
+<script src="../javascripts/storage.js"></script>
+<script src="../javascripts/configStorage.js"></script>
+<script src="../javascripts/shared.js"></script>
+<script src="../javascripts/noteStorage.js"></script>
+<script src="../javascripts/handleBarRender.js"></script>
+<script src="../javascripts/controllerIndex.js"></script>
 
 
 </body>
