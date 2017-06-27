@@ -50,7 +50,7 @@ window.onload = function() {
     function loadNoteToView() {
         if (notesId !== undefined) {
 
-           noteStorage.getNoteById(renderDetail,notesId);
+           noteHandler.getNoteById(renderDetail,notesId);
            /* if (note !== undefined) {
 
                 document.getElementById("title").value = note.title;
@@ -105,10 +105,10 @@ window.onload = function() {
         const importance = getImportanceRate();
 
         if (editMode && title !== "") {
-            noteStorage.updateNote(notesId,title,desc,importance,finishby);
+            noteHandler.updateNote(notesId,title,desc,importance,finishby);
         }
         else if (title !== "") {
-            noteStorage.addNote(title, desc, importance, finishby);
+            noteHandler.addNote(title, desc, importance, finishby);
         }
         goBackToIndex();
 

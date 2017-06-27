@@ -11,4 +11,5 @@
         });
     }
     window.ajax = { ajax : ajax };
+
 }(jQuery));

@@ -5,9 +5,9 @@
 "use strict";
 
 
-const indexController = function(){
+const indexController = function(pnoteHandler){
 
-
+    const noteHandler = pnoteHandler;
     // initialization
     let template = null;
 
@@ -23,21 +23,7 @@ const indexController = function(){
 
     }
     function loadData() {
-
-        /* add dummy entires
-         let notes = noteStorage.addNote("bsp","blablabla",5,"finishby 15.5.2015");
-        */
-
-        /*
-        let notes = noteStorage.getNotes();
-        let notesRendered = handleBarRender.renderNotes(template,notes);
-        if (notesRendered !== null) {
-            document.getElementById("list-notes").innerHTML = notesRendered;
-        }*/
-
-        noteStorage.getNotes("list-notes");
-
-        /* document.getElementById("list-notes").innerHTML =  'neuer <b>fetter<\/b> Text'; */
+        noteHandler.getNotes();
     }
 
     // Event listener Register
@@ -83,7 +69,7 @@ const indexController = function(){
                 let item = controlID.substr(1);
 
                 console.log("finished status now:"+document.getElementById(controlID).checked);
-                noteStorage.updateNoteFinished(item, !document.getElementById(controlID).checked);
+                noteHandler.updateNoteFinished(item, !document.getElementById(controlID).checked);
                 loadData();
 
             }
@@ -92,5 +78,5 @@ const indexController = function(){
 
 };
 
-window.onload = indexController();
+window.onload = indexController(noteHandler);
 

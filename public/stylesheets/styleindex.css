@@ -81,6 +81,8 @@
 
 .header-date, .body-checkbox {
     width: 20%;
+    min-width:118px;
+
 }
 
 .header-title {

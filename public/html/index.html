@@ -69,7 +69,7 @@
     <script id="noteListTemplate" type="text/x-handlebars-template">
 
         {{#each this}}
-        <div class="item-note" data-id="{{this.id}}">
+        <div class="item-note" data-id="{{this._id}}">
             <div class="item-header">
                 <div class="header-date">
                     <p>{{this.finishbyNice}}</p>   <!-- Nächsten Mittwoch -->
@@ -116,9 +116,10 @@
             </div>
             <div class="item-body">
                 <div class="body-checkbox">
-                    <input type="checkbox" class="checkbox-input" id="f{{this.id}}" {{#if this.finished}} checked {{/if}} name="done" value="Finished">
+
+                    <input type="checkbox" class="checkbox-input" id="f{{this._id}}" {{#if this.finished}} checked {{/if}} name="done" value="Finished">
                     <div class="checkbox-background"></div>
-                    <label class="checkbox-label" for="f{{this.id}}"><span>Finished</span></label>
+                    <label class="checkbox-label" for="f{{this._id}}"><span>Finished</span></label>
 
                 </div>
                 <!-- div class="body-checkbox-label">
@@ -132,7 +133,7 @@
 
                 {{#unless this.finished}}
                 <div class="body-edit">
-                    <a href="detail.html#{{this.id}}" class="skin-active">Edit</a>
+                    <a href="detail.html#{{this._id}}" class="skin-active">Edit</a>
 
                 </div>
                 {{/unless}}
@@ -147,15 +148,16 @@
 </main>
 
 
-<script src="../javascripts/jquery.min.js"></script>
-<script src="../javascripts/moment.min.js"></script>
-<script src="../javascripts/handlebars.min.js"></script>
+<script src="../javascripts/libs/jquery.min.js"></script>
+<script src="../javascripts/libs/moment.min.js"></script>
+<script src="../javascripts/libs/handlebars.min.js"></script>
 
 <script src="../javascripts/ajaxUtil.js"></script>
+<script src="../javascripts/network.js"></script>
 <script src="../javascripts/storage.js"></script>
 <script src="../javascripts/configStorage.js"></script>
 <script src="../javascripts/shared.js"></script>
-<script src="../javascripts/noteStorage.js"></script>
+<script src="../javascripts/noteHandler.js"></script>
 <script src="../javascripts/handleBarRender.js"></script>
 <script src="../javascripts/controllerIndex.js"></script>
 
