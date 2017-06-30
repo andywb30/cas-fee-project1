@@ -53,12 +53,20 @@ let shared = (function () {
         }
     }
 
-    function styleSet(){
-
-
-    }
-
     // helper functions datemanagement
+    function dateValid(fby){
+
+        if (!moment(fby).isValid()) {
+            if (moment(fby, "DD.MM.YYYY").isValid()) {
+              return true;
+            }
+            if (moment(fby, "YYYY-DD-MM").isValid()) {
+               return true;
+            }
+            return false;
+        }
+        return true;
+    }
     function dateNice(fby){
         if( moment(fby).isValid())     {
             return moment(fby).format("DD.MM.YYYY");
@@ -86,6 +94,7 @@ let shared = (function () {
         styleSelect : styleSelect,
         sortSet : sortSet,
         filterSet : filterSet,
+        dateValid : dateValid,
         dateSort : dateSort,
         dateNice : dateNice
     }

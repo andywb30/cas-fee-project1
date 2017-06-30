@@ -16,14 +16,12 @@ let configStorage = (function () {
             this.sort = sort;
             this.filter = filter;
             this.style = style;
-
-
         }
     }
 
     function saveSort(sort){
         checkAndRead();
-        var inSort = sort;
+        let inSort = sort;
         if (sort !== 'number'){
             inSort = parseInt(sort);
             if( isNaN(inSort)){
@@ -60,7 +58,6 @@ let configStorage = (function () {
 
     function readConfig(){
         config = storageReadConfig();
-        console.log("readconfig:"+config);
         if (config === null || config === undefined){
             // init once
             config = new Config(0,false,0);
@@ -70,28 +67,18 @@ let configStorage = (function () {
     // check if config is set if not initialize
     function checkAndRead(){
         console.log("checkandREead:"+config);
-        if (config === null){
+        if ( config === undefined || config === null){
             readConfig();
         }
     }
 
     function storageReadConfig(){
 
-       // return JSON.parse(localStorage.getItem("config"));
         return storage.readItem("config");
     }
     function storageSaveConfig(){
         storage.saveItem("config",config);
-//        localStorage.setItem("config",JSON.stringify(config));
-
     }
-
-
-    // Private methods and variables
-    function privateMethod(){
-        console.log( "I am private" );
-    }
-
 
     return {
 

@@ -4,10 +4,9 @@
 
 "use strict";
 
-let noteHandler = (function (shared,storage,pnetwork) {
+let noteHandler = (function () {
     let notesInternal = [];
 
-    const network = pnetwork;
 
     class Note {
         constructor(title, description, importance, finishby) {
@@ -85,9 +84,7 @@ let noteHandler = (function (shared,storage,pnetwork) {
 
     function addNote(title,description,importance,finishby){
         let note = new Note(title,description,importance,finishby);
-
         network.noteCreate(note).done(function(x){console.log(x);});
-
     }
     function updateNoteFinished(id,finished){
         network.noteUpdateFinished(id,finished);
@@ -102,7 +99,7 @@ let noteHandler = (function (shared,storage,pnetwork) {
 
         network.noteGet(id).done(function(note){
             if (callback){
-                console.log("getNotebyId:"+id);
+                //console.log("getNotebyId:"+id);
                 note.finishbyNice = shared.dateNice(note.finishby);
                 callback(note);
             }
@@ -122,4 +119,4 @@ let noteHandler = (function (shared,storage,pnetwork) {
 
 
 // ()); causes to execute the object immediately
-})(shared,storage,network);
+}());

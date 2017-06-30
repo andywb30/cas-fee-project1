@@ -1,3 +1,10 @@
+/**
+ * Created by wildi on 14.06.17.
+ */
+
+"use strict";
+
+
 ;(function($) {
 
     function ajax(metod, url, data, headers) {

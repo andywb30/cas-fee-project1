@@ -5,16 +5,15 @@
 "use strict";
 
 
-const indexController = function(pnoteHandler){
+const indexController = function(){
 
-    const noteHandler = pnoteHandler;
+
     // initialization
     let template = null;
 
     init();
     function init(){
         console.log("loading indexonctoller");
-         template = document.getElementById("noteListTemplate").innerText;
 
         shared.styleSelect();
         shared.sortSet();
@@ -22,9 +21,7 @@ const indexController = function(pnoteHandler){
         loadData();
 
     }
-    function loadData() {
-        noteHandler.getNotes();
-    }
+
 
     // Event listener Register
     const SortSet  = document.getElementById("control-bar");
@@ -45,17 +42,15 @@ const indexController = function(pnoteHandler){
 
         let controlID = control.target.getAttribute("for");
         if (controlID !== null) {
+            // bubbling for sort
             if ( controlID.substr(0,1) === "i" ){
                 let sortBy = controlID.substr(1);
                 configStorage.updateSort(sortBy);
                 document.getElementById(controlID).checked = true;
             }
+            // bubbling for filter
             if ( controlID.substr(0,1) === "c" ){
-                // dont switch checked to opposite as the browser doesit anyway->prevent do it here again
-             /*   document.getElementById(controlID).checked =  !document.getElementById(controlID).checked;
-               */
                 configStorage.updateFilter(!document.getElementById(controlID).checked);
-                console.log("SortSetEventListener" +   document.getElementById(controlID).checked);
             }
         }
         loadData();
@@ -67,16 +62,18 @@ const indexController = function(pnoteHandler){
         if (controlID !== null) {
             if (controlID.substr(0, 1) === "f") {
                 let item = controlID.substr(1);
-
-                console.log("finished status now:"+document.getElementById(controlID).checked);
                 noteHandler.updateNoteFinished(item, !document.getElementById(controlID).checked);
                 loadData();
 
             }
         }
     }
+     // helper function
+    function loadData() {
+        noteHandler.getNotes();
+    }
 
 };
 
-window.onload = indexController(noteHandler);
+window.onload = indexController();
 

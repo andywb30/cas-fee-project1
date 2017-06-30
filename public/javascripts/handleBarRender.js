@@ -9,6 +9,8 @@ let handleBarRender = (function () {
     function renderNotes(template, notes){
 
         const templateCompiled = Handlebars.compile(template);
+
+        // this helper allows handelbars to display the correct amount of flashes
         Handlebars.registerHelper('ifCond', function(v1, v2,options){
             if (v1.importance === v2) {
                 return options.fn(this);
@@ -17,11 +19,6 @@ let handleBarRender = (function () {
                 return options.inverse(this);
             }
         });
-        /*
-        notes.forEach(note => {
-            content.push(template)
-            }
-        )*/
 
         return  templateCompiled(notes);
 

@@ -1,19 +1,9 @@
 /**
- * Created by awedag on 22.06.17.
+ * Created by wildi on 22.06.17.
  */
 
 const Datastore = require('nedb');
 const db = new Datastore({ filename: './data/notes.db', autoload: true });
-
-/*
-function Order(pizzaName, orderedBy)
-{
-    this.orderedBy = orderedBy;
-    this.pizzaName = pizzaName;
-    this.orderDate = new Date();
-    this.state = "OK";
-}
-*/
 
 
 class Note {
@@ -22,8 +12,7 @@ class Note {
         this.id = 43;
         this.title = title;
         this.description = description;
-        /*    this.descriptionBr = '"' + description.replace("\n", '"\n<br>\n"') + '"';
-         */  this.importance = importance;
+        this.importance = importance;
         this.finishby = finishby;
         this.finished = false;
         this.createdAt = new Date();

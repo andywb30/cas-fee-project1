@@ -85,6 +85,14 @@
 
 }
 
+.body-description{
+    white-space: pre-line;
+}
+
+.body-text:hover{
+    max-height:none;
+}
+
 .header-title {
     width:40%;
 }
@@ -99,7 +107,7 @@
 
 .body-text {
     width:70%;
-    max-height: 3.8em;
+    max-height: 4.3em;
     /*dont display overflow text*/
     overflow: hidden;
 /*special paddings, margins*/
@@ -124,7 +132,6 @@
     /*proper alignment to div*/
     margin-top: 0.438em;
 }
-
 
 
 /*hide original control*/
