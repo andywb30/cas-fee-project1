@@ -16,7 +16,7 @@
 
 <header class="header">
 
-    <div class="notestitle">
+    <div class="skin-notestitle notestitle">
         <h1>Notes</h1>
     </div>
 
@@ -42,22 +42,22 @@
 
     <div class="control-bar" id="control-bar">
         <div>
-            <div class="sort-item">
-                <input type="radio" class="sort-item-radio" id="i1" name="sort" value="finish-date">
+            <div class="skin-sort-item sort-item">
+                <input type="radio" class="skin-control-bar-item sort-item-radio" id="i1" name="sort" value="finish-date">
                 <label class="skin-active sort-item-radio-label" for="i1">by finish date</label>
             </div>
-            <div class="sort-item">
-                <input type="radio"  class="sort-item-radio" id="i2" name="sort" value="created-date">
+            <div class="skin-sort-item sort-item">
+                <input type="radio"  class="skin-control-bar-item sort-item-radio" id="i2" name="sort" value="created-date">
                 <label class="skin-active sort-item-radio-label" for="i2">by created date</label>
             </div>
-            <div class="sort-item" >
-                <input type="radio"  class="sort-item-radio" id="i3" name="sort" value="importance">
+            <div class="skin-sort-item sort-item" >
+                <input type="radio"  class="skin-control-bar-item sort-item-radio" id="i3" name="sort" value="importance">
                 <label class="skin-active sort-item-radio-label" for="i3">by importance</label>
             </div>
         </div>
 
         <div class="control-bar-finishswitch">
-            <input type="checkbox" class="finishswitch-checkbox" id="c1">
+            <input type="checkbox" class="skin-control-bar-item finishswitch-checkbox finishswitch-checkbox" id="c1">
             <label class="skin-active finishswitch-label" for="c1">Show Finished</label>
 
         </div>
@@ -70,7 +70,7 @@
 
         {{#each this}}
         <div class="item-note" data-id="{{this._id}}">
-            <div class="item-header">
+            <div class="skin-item-header item-header">
                 <div class="header-date">
                     <p>{{this.finishbyNice}}</p>   <!-- Nächsten Mittwoch -->
                 </div>
@@ -118,7 +118,7 @@
                 <div class="body-checkbox">
 
                     <input type="checkbox" class="checkbox-input" id="f{{this._id}}" {{#if this.finished}} checked {{/if}} name="done" value="Finished">
-                    <div class="checkbox-background"></div>
+                    <div class="skin-checkbox-background checkbox-background"></div>
                     <label class="checkbox-label" for="f{{this._id}}"><span>Finished</span></label>
 
                 </div>

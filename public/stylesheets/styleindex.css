@@ -95,6 +95,9 @@
 
 .header-title {
     width:40%;
+    padding-left: 0.3em;
+    word-wrap:break-word;
+
 }
 
 .header-importance {

@@ -32,37 +32,55 @@ p, span{
     padding: 0.2em;
 }
 
-.description-textarea{
-    border-color: lightblue;
+.skin-active-description-textarea{
+    border: lightblue solid 0.1em ;
+    border-radius: 0.2em;
+
+    color: dimgrey;
+    background: white;
+    text-decoration: none;
     /*necessary to have proper em*/
-    font-family: inherit;
+   /* font-family: inherit;*/
+    padding: 0.2em;
+
+    cursor:pointer;
+
 }
 
-.notestitle h1{
+.skin-notestitle h1{
     background-color: lightblue;
 }
 
 /*checked and label*/
-.sort-item-radio:checked + .sort-item-radio-label,
-.finishswitch-checkbox:checked + .finishswitch-label
+.skin-control-bar-item:checked + .skin-active
 {
     background-color:lightblue;
     color: dimgrey;
 }
 
-.sort-item {
+/*checked and label*/
+/*
+.sort-item-radio:checked + .sort-item-radio-label,
+.finishswitch-checkbox:checked + .finishswitch-label
+{
+    background-color:lightblue;
+    color: dimgrey;
+}*/
+
+
+.skin-sort-item {
     padding: 0;
 }
 
 
 /*draw line after each item*/
-.item-header {
+.skin-item-header {
     border-top: solid aliceblue 0.1em;
 
 }
 
 /*create background - that is individual style*/
-.checkbox-background{
+.skin-checkbox-background{
 
     background: lightcyan;
     border: lightblue solid 1px;

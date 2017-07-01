@@ -28,37 +28,48 @@ p, span{
     padding: 0.2em;
 }
 
-.description-textarea{
-    border-color: lightblue;
+.skin-active-description-textarea{
+    color: darkslategrey;
+    background: antiquewhite;
+    border: none;
     font-family: inherit;
 }
 
 
-.notestitle h1{
+.skin-notestitle h1{
     background-color: antiquewhite;
 }
 
 /*checked and label*/
+/*
 .sort-item-radio:checked + .sort-item-radio-label,
 .finishswitch-checkbox:checked + .finishswitch-label
 {
     background-color:gainsboro;
     color: darkgoldenrod;
+}*/
+
+/*checked and label*/
+.skin-control-bar-item:checked + .skin-active
+{
+    background-color:gainsboro;
+    color: darkgoldenrod;
 }
 
-.sort-item {
+
+.skin-sort-item {
     padding-right: 0.2em;
 }
 
 
 /*draw line after each item*/
-.item-header {
+.skin-item-header {
     border-top: solid dimgrey 0.01em;
 
 }
 
 /*create background*/
-.checkbox-background{
+.skin-checkbox-background{
 
     background: antiquewhite;
 
