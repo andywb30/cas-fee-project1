@@ -41,15 +41,6 @@ p, span{
 }
 
 /*checked and label*/
-/*
-.sort-item-radio:checked + .sort-item-radio-label,
-.finishswitch-checkbox:checked + .finishswitch-label
-{
-    background-color:gainsboro;
-    color: darkgoldenrod;
-}*/
-
-/*checked and label*/
 .skin-control-bar-item:checked + .skin-active
 {
     background-color:gainsboro;

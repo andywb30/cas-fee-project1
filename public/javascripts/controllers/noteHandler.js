@@ -66,6 +66,7 @@ let noteHandler = (function () {
         let notesRendered = handleBarRender.renderNotes(document.getElementById("noteListTemplate").innerText,notes);
         if (notesRendered !== null) {
             document.getElementById("list-notes").innerHTML = notesRendered;
+            document.getElementById("notestitle-amount").innerText = 'Notes ('+notes.length+')';
         }
     }
 

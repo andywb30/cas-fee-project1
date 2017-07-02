@@ -58,15 +58,6 @@ p, span{
     color: dimgrey;
 }
 
-/*checked and label*/
-/*
-.sort-item-radio:checked + .sort-item-radio-label,
-.finishswitch-checkbox:checked + .finishswitch-label
-{
-    background-color:lightblue;
-    color: dimgrey;
-}*/
-
 
 .skin-sort-item {
     padding: 0;
